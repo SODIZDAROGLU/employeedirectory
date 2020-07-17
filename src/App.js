@@ -1,16 +1,44 @@
-import React from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import NavBar from './components/NavBar';
-import MainPage from "./containers/MainPage";
+import React, { Component } from "react";
+import "./App.css";
+import Jumbotron from "./components/Jumbotron";
+import Form from "./components/Form";
+import Table from "./components/Table";
+import Container from "./components/Container";
+import Row from "./components/Row";
+import Col from "./components/Col";
+import API from "./utils/API";
 
+class App extends Component {
+  state = {
+    results: [],
+    search: "",
+  };
 
-function App() {
-  return (
-    <Router>
-      <NavBar />
-      <Route exact path="/" component={MainPage} />
-    </Router>
-  );
+  componentDidMount() {
+    this.findEmployees();
+  }
+
+  findEmployees = () => {
+    API.search()
+      .then((res) => this.setState({ results: res.data.results }))
+      .catch((err) => console.log(err));
+  };
+
+  render() {
+    return (
+      <div>
+        <Jumbotron />
+        <Container>
+          <Row>
+            <Col>
+              <Form />
+              <Table results={this.state.results} />
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    );
+  }
 }
 
 export default App;
