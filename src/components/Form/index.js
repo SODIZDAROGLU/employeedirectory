@@ -7,7 +7,7 @@ class Form extends Component {
   };
 
   handleInputChange = (event) => {
-   
+ 
     const { search, value } = event.target;
 
    
@@ -17,7 +17,8 @@ class Form extends Component {
   };
 
   render() {
-   
+
+    
     return (
       <div>
         <form className="form">
