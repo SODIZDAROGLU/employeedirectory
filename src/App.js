@@ -1,44 +1,11 @@
-import React, { Component } from "react";
-import "./App.css";
-import Jumbotron from "./components/Jumbotron";
-import Form from "./components/Form";
-import Table from "./components/Table";
-import Container from "./components/Container";
-import Row from "./components/Row";
-import Col from "./components/Col";
-import API from "./utils/API";
+import React from 'react';
+import './index.css';
+import Homepage from "./pages/Homepage";
 
-class App extends Component {
-  state = {
-    results: [],
-    search: "",
-  };
-
-  componentDidMount() {
-    this.findEmployees();
-  }
-
-  findEmployees = () => {
-    API.search()
-      .then((res) => this.setState({ results: res.data.results }))
-      .catch((err) => console.log(err));
-  };
-
-  render() {
-    return (
-      <div>
-        <Jumbotron />
-        <Container>
-          <Row>
-            <Col>
-              <Form />
-              <Table results={this.state.results} />
-            </Col>
-          </Row>
-        </Container>
-      </div>
-    );
-  }
+function App() {
+  return (
+    <Homepage />
+  );
 }
 
 export default App;

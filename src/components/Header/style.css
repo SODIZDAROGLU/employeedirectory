@@ -1,0 +1,32 @@
+.header-container {
+    text-align: center;
+    padding: 100px 0px 100px 0px;
+    background-color: #90abc2;
+    width: 100% !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+.title, .subtitle {
+    color: white;
+}
+
+.about-btn {
+    background: none;
+    border: .5px solid white;
+    color: white;
+    font-size: 13px;
+    text-transform: uppercase;
+    border-radius: 20px;
+    padding: 10px 30px 10px 30px;
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+
+
+
+.about-section {
+    background-color:#90abc2 ;
+    font-size: 16px;
+}
